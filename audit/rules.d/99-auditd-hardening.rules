@@ -1,0 +1,25 @@
+# Usuń aktywne reguły przed wczytaniem kompletnego zestawu
+-D
+
+# Monitorowanie zmian w kontach użytkowników
+-w /etc/passwd -p wa -k passwd_changes
+-w /etc/shadow -p wa -k shadow_changes
+-w /etc/group  -p wa -k group_changes
+-w /etc/gshadow -p wa -k gshadow_changes
+
+# Monitorowanie konfiguracji SSH
+-w /etc/ssh/sshd_config -p wa -k ssh_config
+-w /etc/ssh/sshd_config.d/ -p wa -k ssh_config
+
+# Monitorowanie prób modyfikacji plików sudoers
+-w /etc/sudoers -p wa -k sudo_changes
+-w /etc/sudoers.d/ -p wa -k sudo_changes
+
+# Monitorowanie prób dostępu do katalogów systemowych
+-w /bin/ -p wa -k bin_changes
+-w /sbin/ -p wa -k sbin_changes
+-w /usr/bin/ -p wa -k usrbin_changes
+-w /usr/sbin/ -p wa -k usrsbin_changes
+
+# Próby załadowania/dodania modułów kernela
+-a always,exit -F arch=b64 -S init_module -S delete_module -k kernel_module

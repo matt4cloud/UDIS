@@ -1,0 +1,18 @@
+ftp.sh
+
+# Local settings and secrets
+.env
+.env.*
+!.env.example
+*.local.env
+
+# Local agent directories
+.claude/*
+.codex/*
+
+# Internal working documents (kept local, not published)
+# AGENTS.md is published (open standard); CLAUDE.md stays local as its route.
+/TECH_SCOPE.md
+/TODO.md
+/CHANGELOG.md
+/CLAUDE.md

@@ -1,0 +1,8 @@
+[DEFAULT]
+# Każdy ban na 24h
+bantime  = 24h
+# W oknie 10 minut liczymy próby
+findtime = 10m
+# 3 nieudane próby i leci ban
+maxretry = 3
+ignoreip = 127.0.0.1/8 ::1

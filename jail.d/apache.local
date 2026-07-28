@@ -1,0 +1,20 @@
+[apache-auth]
+enabled  = true
+port     = http,https
+logpath  = %(apache_error_log)s
+maxretry = 3
+bantime  = 24h
+
+[apache-badbots]
+enabled  = true
+port     = http,https
+logpath  = %(apache_access_log)s
+maxretry = 1
+bantime  = 7d
+
+[apache-overflows]
+enabled  = true
+port     = http,https
+logpath  = %(apache_error_log)s
+maxretry = 2
+bantime  = 48h

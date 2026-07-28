@@ -1,0 +1,7 @@
+[sshd]
+enabled  = true
+port     = 22122
+backend  = systemd
+maxretry = 3
+findtime = 10m
+bantime  = 48h

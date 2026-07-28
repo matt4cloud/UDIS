@@ -1,0 +1,7 @@
+[recidive]
+enabled  = true
+logpath  = /var/log/fail2ban.log
+banaction = nftables[type=allports]
+findtime = 1w
+bantime  = 1w
+maxretry = 5
